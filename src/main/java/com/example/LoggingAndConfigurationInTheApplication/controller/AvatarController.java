@@ -3,6 +3,7 @@ package com.example.LoggingAndConfigurationInTheApplication.controller;
 import com.example.LoggingAndConfigurationInTheApplication.repository.AvatarRepository;
 import com.example.LoggingAndConfigurationInTheApplication.service.AvatarService;
 import com.example.LoggingAndConfigurationInTheApplication.model.Avatar;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -28,7 +29,7 @@ public class AvatarController {
     @Value("${avatar.cover.dir.path}") // Добавленная аннотация
     private String avatarDir; // Объявление переменной
 
-
+    @Autowired
     public AvatarController(AvatarService avatarService, AvatarRepository avatarRepository) {
         this.avatarService = avatarService;
         this.avatarRepository = avatarRepository;

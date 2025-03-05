@@ -15,7 +15,7 @@ import java.util.List;
 @Profile("production")
 public class StudentService {
 
-    private final Logger logger = LoggerFactory.getLogger(StudentService.class);
+    Logger logger = LoggerFactory.getLogger(StudentService.class);
     private final StudentRepository studentRepository;
 
     public StudentService(StudentRepository studentRepository) {
@@ -56,31 +56,37 @@ public class StudentService {
 
     public Collection<Student> findStudentByName(String name) {
         logger.info("Was invoked method for find by name");
+
         return studentRepository.findStudentByNameContainsIgnoreCase(name);
     }
 
     public Collection<Student> findAllByNameContains(String namePart) {
         logger.info("Was invoked method for find by name");
+
         return studentRepository.findAllByNameContainsIgnoreCase(namePart);
     }
 
     public Collection<Student> findByAgeBetween(int minAge, int maxAge) {
-        logger.info("Was invoked method for find by age between");
+        logger.info("Was invoked method for find by name");
+
         return studentRepository.findByAgeBetween(minAge, maxAge);
     }
 
     public List<StudentByCategory> getStudentsCount() {
-        logger.info("Was invoked method for get students count");
+        logger.info("Was invoked method for find by name");
+
         return studentRepository.getStudentsCount();
     }
 
     public double avgAgeByStudents() {
-        logger.info("Was invoked method for avg age by students");
+        logger.info("Was invoked method for find by name");
+
         return studentRepository.avgAgeByStudents();
     }
 
     public List<StudentByCategory> getLastFiveStudent() {
-        logger.info("Was invoked method for get last five student");
+        logger.info("Was invoked method for find by name");
+
         return studentRepository.getLastFiveStudent();
     }
 }
